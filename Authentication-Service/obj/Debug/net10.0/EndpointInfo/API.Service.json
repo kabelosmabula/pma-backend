@@ -1,0 +1,2510 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "API.Service | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://localhost:7212"
+    },
+    {
+      "url": "http://localhost:5030"
+    }
+  ],
+  "paths": {
+    "/api/authentication/login": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAuthTokenCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAuthTokenCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAuthTokenCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/authentication/log-out": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/authentication/create-account": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/authentication/verify-account": {
+      "put": {
+        "tags": [
+          "Authentication"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/authentication/refresh-token": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/authentication/get-token-payload": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/invoice/create-invoice": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/invoice/pay-invoice": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayInvoiceShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayInvoiceShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PayInvoiceShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/invoice/get-invoice-by-id": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "invoiceId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/invoice/get-invoices-by-practice": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "parameters": [
+          {
+            "name": "PracticeId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/create": {
+      "post": {
+        "tags": [
+          "Practice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/update/{id}": {
+      "put": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MedicalPracticeShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/delete": {
+      "delete": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "practiceId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/get-practioners-by-practice-id/{practiceId}": {
+      "get": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "practiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/link-practioner": {
+      "post": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "PracticeId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "RoleId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/unlink-practioner": {
+      "post": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "Email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "PracticeId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/get-all-practices-by-owner": {
+      "get": {
+        "tags": [
+          "Practice"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/get-by-practice-id": {
+      "get": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "practiceId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/add-practice-practioner-profile": {
+      "post": {
+        "tags": [
+          "Practice"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractionerShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractionerShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractionerShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practice/manage-practice-access-status/{practiceId}/{isActive}": {
+      "put": {
+        "tags": [
+          "Practice"
+        ],
+        "parameters": [
+          {
+            "name": "practiceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "isActive",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/add-practitioner/add-Practitioner": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePractitionerCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePractitionerCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePractitionerCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/create-practice-practitioner/create-Practice-Practitioner": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractitionerCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractitionerCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePractitionerCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/create-practice-consultation/create-Practice-consultation": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateConsultationCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/update-practice-consultation/update-Practice-consultation": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateConsultationCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/delete-practice-consultation/Delete-Practice-Consultation": {
+      "delete": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteConsultationCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteConsultationCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteConsultationCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/get-practice-consultation/getall-Practice-consultation": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "Practiceid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/get-consultation/get-consultation-by-id": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "Consultationmid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/web-create-practice-patient/web-create-Practice-patient": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebCreatePatientPracticeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebCreatePatientPracticeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/WebCreatePatientPracticeCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/create-practice-patient/create-Practice-patient": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePatientCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePatientCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePracticePatientCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/update-practice-patient/Update-Practice-patient": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientHouseholdCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientHouseholdCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientHouseholdCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/delete-practice-patient/Delete-Practice-patient": {
+      "delete": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/get-patient-a/get-patient-by-id": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "practiceid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "patientid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/get-patient-household/get-patient-by-householdidandpatientid": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "practiceid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "householdi",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/move-practice-patient/Move-Practice-patient": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePracticePatientCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/add-patient-to-household/Add-to-household": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPatientToHouseHoldCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPatientToHouseHoldCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddPatientToHouseHoldCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/create-patient-appointment/create-appointment": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientAppointmentCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientAppointmentCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePatientAppointmentCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/update-patient-appointment/update-appointment": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientAppointmentCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientAppointmentCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdatePatientAppointmentCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/center-update-patient-appointment/center-update-appointment": {
+      "post": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CenterUpdateAppointment"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CenterUpdateAppointment"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CenterUpdateAppointment"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/delete-patient-appointment/delete-appointment": {
+      "delete": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePatientAppointmentCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePatientAppointmentCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeletePatientAppointmentCommand"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/get-patient-appointment/get-appointment-by-id": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "appointmentid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/practices-patient/getall-patient-appointment/getall-appointment-by-patientid": {
+      "get": {
+        "tags": [
+          "PracticesPatient"
+        ],
+        "parameters": [
+          {
+            "name": "Patientid",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/update-account": {
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountShared"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountShared"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAccountShared"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/get-by-email": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/get-all-roles": {
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AddPatientToHouseHoldCommand": {
+        "type": "object",
+        "properties": {
+          "practiceId": {
+            "type": "string"
+          },
+          "householdId": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "idNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "addresses": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AddressDto"
+              }
+            ]
+          },
+          "emergencyContacts": {
+            "$ref": "#/components/schemas/EmergencyContactDto"
+          },
+          "medicalAids": {
+            "$ref": "#/components/schemas/MedicalAidDto"
+          },
+          "allergiesAndAlerts": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AllergiesAndAlertsDto"
+              }
+            ]
+          }
+        }
+      },
+      "AddressDto": {
+        "type": "object",
+        "properties": {
+          "streetAddress": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "province": {
+            "type": "string"
+          },
+          "postalCode": {
+            "type": "string"
+          }
+        }
+      },
+      "AllergiesAndAlertsDto": {
+        "type": "object",
+        "properties": {
+          "allergies": {
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "AppointmentStatus": {
+        "type": "integer"
+      },
+      "BillingType": {
+        "type": "integer"
+      },
+      "CardiologyConsultationDto": {
+        "type": "object",
+        "properties": {
+          "ecgPerformed": {
+            "type": "boolean"
+          },
+          "ecgFindings": {
+            "type": "string"
+          },
+          "echoPerformed": {
+            "type": "boolean"
+          },
+          "ejectionFraction": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "smokingRisk": {
+            "type": "boolean"
+          },
+          "hypertensionRisk": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CenterUpdateAppointment": {
+        "type": "object",
+        "properties": {
+          "appointmentreference": {
+            "type": "string"
+          },
+          "appointmenttype": {
+            "type": "string"
+          },
+          "householdId": {
+            "type": "string"
+          },
+          "appointmentId": {
+            "type": "string"
+          },
+          "practiceId": {
+            "type": "string"
+          },
+          "patientid": {
+            "type": "string"
+          },
+          "practitionerId": {
+            "type": "string"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startappointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endappointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AppointmentStatus"
+          },
+          "userid": {
+            "type": "string"
+          }
+        }
+      },
+      "clinicalDocumentsDto": {
+        "type": "object",
+        "properties": {
+          "documentName": {
+            "type": "string"
+          },
+          "documentType": {
+            "type": "string"
+          },
+          "fileUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "ClinicalImageDto": {
+        "type": "object",
+        "properties": {
+          "imageUrl": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateAccountCommand": {
+        "required": [
+          "password",
+          "firstname",
+          "lastname",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "password": {
+            "type": "string"
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateAccountShared": {
+        "required": [
+          "firstname",
+          "lastname",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateAuthTokenCommand": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateConsultationCommand": {
+        "type": "object",
+        "properties": {
+          "billingType": {
+            "$ref": "#/components/schemas/BillingType"
+          },
+          "appointmentId": {
+            "type": "string"
+          },
+          "patientId": {
+            "type": "string"
+          },
+          "practicePractitionerId": {
+            "type": "string"
+          },
+          "reasonForVisit": {
+            "type": "string"
+          },
+          "consultationNotes": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "isfollowUpRequired": {
+            "type": "boolean"
+          },
+          "followUpDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpStartTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpEndTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpReason": {
+            "type": "string"
+          },
+          "specialtyType": {
+            "$ref": "#/components/schemas/SpecialtyType"
+          },
+          "visitDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "vitals": {
+            "$ref": "#/components/schemas/VitalDto"
+          },
+          "diagnoses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiagnosisDto"
+            }
+          },
+          "procedures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/proceduresDto"
+            }
+          },
+          "prescriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/prescriptionsDto"
+            }
+          },
+          "clinicalDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/clinicalDocumentsDto"
+            }
+          },
+          "cardiologyData": {
+            "$ref": "#/components/schemas/CardiologyConsultationDto"
+          },
+          "dermatologyData": {
+            "$ref": "#/components/schemas/DermatologyConsultationDto"
+          },
+          "psychiatryData": {
+            "$ref": "#/components/schemas/PsychiatryConsultationDto"
+          },
+          "pediatricsData": {
+            "$ref": "#/components/schemas/PediatricsConsultationDto"
+          },
+          "oncologyData": {
+            "$ref": "#/components/schemas/OncologyConsultationDto"
+          },
+          "dentistryData": {
+            "$ref": "#/components/schemas/DentistryConsultationDto"
+          }
+        }
+      },
+      "CreatePatientAppointmentCommand": {
+        "type": "object",
+        "properties": {
+          "appointmentreference": {
+            "type": "string"
+          },
+          "appointmenttype": {
+            "type": "string"
+          },
+          "idnumber": {
+            "type": "string"
+          },
+          "practitionerId": {
+            "type": "string"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startappointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endappointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AppointmentStatus"
+          },
+          "userid": {
+            "type": "string"
+          }
+        }
+      },
+      "CreatePracticePatientCommand": {
+        "type": "object",
+        "properties": {
+          "practiceId": {
+            "type": "string"
+          },
+          "householdId": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "idNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "addresses": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AddressDto"
+              }
+            ]
+          },
+          "emergencyContacts": {
+            "$ref": "#/components/schemas/EmergencyContactDto"
+          },
+          "medicalAids": {
+            "$ref": "#/components/schemas/MedicalAidDto"
+          },
+          "allergiesAndAlerts": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AllergiesAndAlertsDto"
+              }
+            ]
+          }
+        }
+      },
+      "CreatePracticePractionerShared": {
+        "required": [
+          "practiceId",
+          "roleId",
+          "firstname",
+          "lastname",
+          "email"
+        ],
+        "type": "object",
+        "properties": {
+          "practiceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "phonenumber": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "firstname": {
+            "type": "string"
+          },
+          "lastname": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        }
+      },
+      "CreatePracticePractitionerCommand": {
+        "type": "object",
+        "properties": {
+          "practiceId": {
+            "type": "string"
+          },
+          "practitionerId": {
+            "type": "string"
+          },
+          "specialty": {
+            "type": "string"
+          },
+          "practiceEmail": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreatePractitionerCommand": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string"
+          },
+          "hpcsaNumber": {
+            "type": "string"
+          },
+          "fullname": {
+            "type": "string"
+          },
+          "yearsofexperience": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "licenseexpirydate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "DeleteConsultationCommand": {
+        "type": "object",
+        "properties": {
+          "consultationId": {
+            "type": "string"
+          },
+          "practicePractitionerId": {
+            "type": "string"
+          },
+          "specialtyTypes": {
+            "$ref": "#/components/schemas/SpecialtyType"
+          }
+        }
+      },
+      "DeletePatientAppointmentCommand": {
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          }
+        }
+      },
+      "DeletePracticePatientCommand": {
+        "type": "object",
+        "properties": {
+          "patientid": {
+            "type": "string"
+          },
+          "practiceId": {
+            "type": "string"
+          },
+          "displayname": {
+            "type": "string"
+          }
+        }
+      },
+      "DentistryConsultationDto": {
+        "type": "object",
+        "properties": {
+          "xRayCompleted": {
+            "type": "boolean"
+          },
+          "gumCondition": {
+            "type": "string"
+          },
+          "toothCharts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ToothChartDto"
+            }
+          }
+        }
+      },
+      "DermatologyConsultationDto": {
+        "type": "object",
+        "properties": {
+          "skinCondition": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          },
+          "affectedAreas": {
+            "type": "string"
+          },
+          "clinicalImages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClinicalImageDto"
+            }
+          }
+        }
+      },
+      "DiagnosisDto": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      },
+      "EmergencyContactDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "relationship": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        }
+      },
+      "InvoiceLineItem": {
+        "required": [
+          "referenceCode",
+          "description",
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "referenceCode": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "amount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "InvoiceShared": {
+        "required": [
+          "consultationId",
+          "patientId",
+          "totalAmount",
+          "lineItems"
+        ],
+        "type": "object",
+        "properties": {
+          "consultationId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "patientId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "totalAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "lineItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InvoiceLineItem"
+            }
+          }
+        }
+      },
+      "MedicalAidDto": {
+        "type": "object",
+        "properties": {
+          "provider": {
+            "type": "string"
+          },
+          "planName": {
+            "type": "string"
+          },
+          "memberNumber": {
+            "type": "string"
+          },
+          "schemeCode": {
+            "type": "string"
+          },
+          "planCode": {
+            "type": "string"
+          }
+        }
+      },
+      "MedicalPracticeShared": {
+        "required": [
+          "name",
+          "practiceNumber",
+          "address",
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "practiceNumber": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "phoneNumber": {
+            "type": "string"
+          }
+        }
+      },
+      "OncologyConsultationDto": {
+        "type": "object",
+        "properties": {
+          "cancerType": {
+            "type": "string"
+          },
+          "cancerStage": {
+            "type": "string"
+          },
+          "chemotherapyCycle": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "tumorResponse": {
+            "type": "string"
+          }
+        }
+      },
+      "PayInvoiceShared": {
+        "required": [
+          "invoiceId",
+          "paymentMethod",
+          "amount"
+        ],
+        "type": "object",
+        "properties": {
+          "invoiceId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethod": {
+            "type": "string"
+          },
+          "amount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "PediatricsConsultationDto": {
+        "type": "object",
+        "properties": {
+          "weightKg": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "heightCm": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "vaccinationsUpToDate": {
+            "type": "boolean"
+          },
+          "developmentalMilestones": {
+            "type": "string"
+          }
+        }
+      },
+      "prescriptionsDto": {
+        "type": "object",
+        "properties": {
+          "medicationName": {
+            "type": "string"
+          },
+          "dosage": {
+            "type": "string"
+          },
+          "frequency": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "proceduresDto": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "tariffAmount": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "PsychiatryConsultationDto": {
+        "type": "object",
+        "properties": {
+          "mood": {
+            "type": "string"
+          },
+          "affect": {
+            "type": "string"
+          },
+          "speech": {
+            "type": "string"
+          },
+          "suicidalIdeation": {
+            "type": "boolean"
+          },
+          "selfHarmRiskLevel": {
+            "type": "string"
+          },
+          "therapyNotes": {
+            "type": "string"
+          }
+        }
+      },
+      "SpecialtyType": {
+        "type": "integer"
+      },
+      "ToothChartDto": {
+        "type": "object",
+        "properties": {
+          "toothNumber": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "condition": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateConsultationCommand": {
+        "type": "object",
+        "properties": {
+          "consultationId": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "consultationNotes": {
+            "type": "string"
+          },
+          "reasonForVisit": {
+            "type": "string"
+          },
+          "specialtyTypes": {
+            "$ref": "#/components/schemas/SpecialtyType"
+          },
+          "billingType": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/BillingType"
+              }
+            ]
+          },
+          "isfollowUpRequired": {
+            "type": "boolean"
+          },
+          "followUpDate": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpStartTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpEndTime": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date-time"
+          },
+          "followUpReason": {
+            "type": "string"
+          },
+          "parentConsultationId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "uuid"
+          },
+          "vitals": {
+            "$ref": "#/components/schemas/VitalDto"
+          },
+          "diagnoses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DiagnosisDto"
+            }
+          },
+          "procedures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/proceduresDto"
+            }
+          },
+          "prescriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/prescriptionsDto"
+            }
+          },
+          "clinicalDocuments": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/clinicalDocumentsDto"
+            }
+          },
+          "cardiologyData": {
+            "$ref": "#/components/schemas/CardiologyConsultationDto"
+          },
+          "dermatologyData": {
+            "$ref": "#/components/schemas/DermatologyConsultationDto"
+          },
+          "psychiatryData": {
+            "$ref": "#/components/schemas/PsychiatryConsultationDto"
+          },
+          "pediatricsData": {
+            "$ref": "#/components/schemas/PediatricsConsultationDto"
+          },
+          "oncologyData": {
+            "$ref": "#/components/schemas/OncologyConsultationDto"
+          },
+          "dentistryData": {
+            "$ref": "#/components/schemas/DentistryConsultationDto"
+          }
+        }
+      },
+      "UpdatePatientAppointmentCommand": {
+        "type": "object",
+        "properties": {
+          "appointmentId": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "appointmenttype": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AppointmentStatus"
+          },
+          "appointmentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "startappointment": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endappointment": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "UpdatePatientCommand": {
+        "type": "object",
+        "properties": {
+          "patientId": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "displayname": {
+            "type": "string"
+          },
+          "identitynumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "phonenumber": {
+            "type": "string"
+          },
+          "dateofbirth": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "format": "date"
+          }
+        }
+      },
+      "UpdatePatientHouseholdCommand": {
+        "type": "object",
+        "properties": {
+          "householdId": {
+            "type": "string"
+          },
+          "householdName": {
+            "type": "string"
+          },
+          "primaryContactName": {
+            "type": "string"
+          },
+          "primaryContactSurName": {
+            "type": "string"
+          },
+          "primaryContactPhone": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "address": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "patients": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdatePatientCommand"
+            }
+          }
+        }
+      },
+      "VitalDto": {
+        "type": "object",
+        "properties": {
+          "oxygenSaturation": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "respiratoryRate": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "temperature": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "pulse": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "systolicBP": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "diastolicBP": {
+            "pattern": "^-?(?:0|[1-9]\\d*)$",
+            "type": [
+              "null",
+              "integer",
+              "string"
+            ],
+            "format": "int32"
+          },
+          "weight": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          },
+          "height": {
+            "pattern": "^-?(?:0|[1-9]\\d*)(?:\\.\\d+)?$",
+            "type": [
+              "null",
+              "number",
+              "string"
+            ],
+            "format": "double"
+          }
+        }
+      },
+      "WebCreatePatientPracticeCommand": {
+        "type": "object",
+        "properties": {
+          "practiceId": {
+            "type": "string"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "idNumber": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string"
+          },
+          "addresses": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AddressDto"
+              }
+            ]
+          },
+          "emergencyContacts": {
+            "$ref": "#/components/schemas/EmergencyContactDto"
+          },
+          "medicalAids": {
+            "$ref": "#/components/schemas/MedicalAidDto"
+          },
+          "allergiesAndAlerts": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "$ref": "#/components/schemas/AllergiesAndAlertsDto"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "http",
+        "description": "JWT Authorization",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "security": [
+    { }
+  ],
+  "tags": [
+    {
+      "name": "Authentication"
+    },
+    {
+      "name": "Invoice"
+    },
+    {
+      "name": "Practice"
+    },
+    {
+      "name": "PracticesPatient"
+    },
+    {
+      "name": "Users"
+    }
+  ]
+}

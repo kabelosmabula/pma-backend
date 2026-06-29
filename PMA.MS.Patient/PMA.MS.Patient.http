@@ -1,0 +1,6 @@
+@PMA.MS.Patient_HostAddress = http://localhost:5241
+
+GET {{PMA.MS.Patient_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

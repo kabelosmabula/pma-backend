@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/Application/">
+    <Project Path="PMA.Application/PMA.Application.csproj" />
+  </Folder>
+  <Folder Name="/Domain/">
+    <Project Path="PMA.Domain/PMA.Domain.csproj" Id="90b6277c-2ca4-494a-a485-ad07d2ef3e2b" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="PMA.Persistence/PMA.Persistence.csproj" Id="4363f2c8-9a7c-4e13-8876-b978ae10325d" />
+  </Folder>
+  <Folder Name="/Microservices/">
+    <Project Path="PMA.MS.Patient/PMA.MS.Patient.csproj" Id="d310b077-d751-4393-84b4-f84be3deb420" />
+  </Folder>
+  <Folder Name="/Presentation/">
+    <Project Path="Authentication-Service/API.Service.csproj" Id="6933f5e0-341e-45fa-8cee-f246b7e65da6" />
+  </Folder>
+  <Folder Name="/Unit Tests/">
+    <Project Path="ServiceUnitTests/ServiceUnitTests.csproj" Id="60dba233-705b-44d4-af74-e96c1916f06c" />
+  </Folder>
+</Solution>

@@ -1,0 +1,716 @@
+[
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "CreateAccount",
+    "RelativePath": "api/authentication/create-account",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.Features.Users.Command.CreateAccount.CreateAccountCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "GetTokenPayload",
+    "RelativePath": "api/authentication/get-token-payload",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "LogOut",
+    "RelativePath": "api/authentication/log-out",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "Login",
+    "RelativePath": "api/authentication/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Authentication.Service.Features.Users.Command.CreateAuthenticationToken.CreateAuthTokenCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "RefreshToken",
+    "RelativePath": "api/authentication/refresh-token",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.AuthenticationController",
+    "Method": "VerifyAccount",
+    "RelativePath": "api/authentication/verify-account",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.InvoiceController",
+    "Method": "CreateInvoice",
+    "RelativePath": "api/invoice/create-invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.InvoiceShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.InvoiceController",
+    "Method": "GetInvoiceById",
+    "RelativePath": "api/invoice/get-invoice-by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "invoiceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.InvoiceController",
+    "Method": "GetInvoicesByPractice",
+    "RelativePath": "api/invoice/get-invoices-by-practice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PracticeId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.InvoiceController",
+    "Method": "PayInvoice",
+    "RelativePath": "api/invoice/pay-invoice",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.PayInvoiceShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "AddPracticePractionerProfile",
+    "RelativePath": "api/practice/add-practice-practioner-profile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.CreatePracticePractionerShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "Create",
+    "RelativePath": "api/practice/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.MedicalPracticeShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "Delete",
+    "RelativePath": "api/practice/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "GetAllPracticesByOwner",
+    "RelativePath": "api/practice/get-all-practices-by-owner",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "GetByPracticeId",
+    "RelativePath": "api/practice/get-by-practice-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "GetPractionersByPracticeId",
+    "RelativePath": "api/practice/get-practioners-by-practice-id/{practiceId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "LinkPractioner",
+    "RelativePath": "api/practice/link-practioner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "PracticeId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "RoleId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "ManagePracticeAccessStatus",
+    "RelativePath": "api/practice/manage-practice-access-status/{practiceId}/{isActive}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "isActive",
+        "Type": "System.Boolean",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "UnlinkPractioner",
+    "RelativePath": "api/practice/unlink-practioner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "PracticeId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticeController",
+    "Method": "Update",
+    "RelativePath": "api/practice/update/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      },
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.MedicalPracticeShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "AddPatientToHousehold",
+    "RelativePath": "api/practices-patient/add-patient-to-household/Add-to-household",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.AddPatientToHouseHoldCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "addPractitioner",
+    "RelativePath": "api/practices-patient/add-practitioner/add-Practitioner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.AddPractitioner.Command.CreatePractitionerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "CenterUpdatePatientAppointment",
+    "RelativePath": "api/practices-patient/center-update-patient-appointment/center-update-appointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientAppointments.Commands.CenterUpdateAppointment",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "CreatePatientAppointment",
+    "RelativePath": "api/practices-patient/create-patient-appointment/create-appointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientAppointments.Commands.CreatePatientAppointmentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "CreatePracticeConsultation",
+    "RelativePath": "api/practices-patient/create-practice-consultation/create-Practice-consultation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientConsultation.Commands.CreateConsultationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "CreatePracticePatient",
+    "RelativePath": "api/practices-patient/create-practice-patient/create-Practice-patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.CreatePracticePatientCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "CreatePracticePractitioner",
+    "RelativePath": "api/practices-patient/create-practice-practitioner/create-Practice-Practitioner",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePartitioner.Command.CreatePracticePractitionerCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "DeletePatientAppointment",
+    "RelativePath": "api/practices-patient/delete-patient-appointment/delete-appointment",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientAppointments.Commands.DeletePatientAppointmentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "DeletePracticeConsultation",
+    "RelativePath": "api/practices-patient/delete-practice-consultation/Delete-Practice-Consultation",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientConsultation.Commands.DeleteConsultationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "DeletePracticePatient",
+    "RelativePath": "api/practices-patient/delete-practice-patient/Delete-Practice-patient",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.DeletePracticePatientCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "GetConsultation",
+    "RelativePath": "api/practices-patient/get-consultation/get-consultation-by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Consultationmid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "GetPatientA",
+    "RelativePath": "api/practices-patient/get-patient-a/get-patient-by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "patientid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "GetPatientAppointment",
+    "RelativePath": "api/practices-patient/get-patient-appointment/get-appointment-by-id",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "appointmentid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "GetPatientHousehold",
+    "RelativePath": "api/practices-patient/get-patient-household/get-patient-by-householdidandpatientid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "practiceid",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "householdi",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "getPracticeConsultation",
+    "RelativePath": "api/practices-patient/get-practice-consultation/getall-Practice-consultation",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Practiceid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "GetallPatientAppointment",
+    "RelativePath": "api/practices-patient/getall-patient-appointment/getall-appointment-by-patientid",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Patientid",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "MovePracticePatient",
+    "RelativePath": "api/practices-patient/move-practice-patient/Move-Practice-patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.DeletePracticePatientCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "UpdatePatientAppointment",
+    "RelativePath": "api/practices-patient/update-patient-appointment/update-appointment",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientAppointments.Commands.UpdatePatientAppointmentCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "UpdatePracticeConsultation",
+    "RelativePath": "api/practices-patient/update-practice-consultation/update-Practice-consultation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PatientConsultation.Commands.UpdateConsultationCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "UpdatePracticePatient",
+    "RelativePath": "api/practices-patient/update-practice-patient/Update-Practice-patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.UpdatePatientHouseholdCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.PracticesPatientController",
+    "Method": "WebCreatePracticePatient",
+    "RelativePath": "api/practices-patient/web-create-practice-patient/web-create-Practice-patient",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "PMA.Application.PracticePatient.Command.WebCreatePatientPracticeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.UsersController",
+    "Method": "GetAllRoles",
+    "RelativePath": "api/users/get-all-roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.UsersController",
+    "Method": "GetByEmail",
+    "RelativePath": "api/users/get-by-email",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "API.Service.Controllers.UsersController",
+    "Method": "UpdateAccount",
+    "RelativePath": "api/users/update-account",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "body",
+        "Type": "API.Service.SharedModels.CreateAccountShared",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
