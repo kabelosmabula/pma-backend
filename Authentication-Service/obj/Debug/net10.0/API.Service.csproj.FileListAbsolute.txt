@@ -326,3 +326,4 @@ C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net1
 C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net10.0\API.Service.pdb
 C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net10.0\API.Service.genruntimeconfig.cache
 C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net10.0\ref\API.Service.dll
+C:\Users\kabel\Downloads\Pma-System_Github\authentication-service\obj\Debug\net10.0\API.Service.sourcelink.json

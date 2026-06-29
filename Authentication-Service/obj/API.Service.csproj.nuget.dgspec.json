@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\API.Service.csproj": {}
+    "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\API.Service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\API.Service.csproj": {
+    "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\API.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\API.Service.csproj",
+        "projectUniqueName": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\API.Service.csproj",
         "projectName": "API.Service",
-        "projectPath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\API.Service.csproj",
+        "projectPath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\API.Service.csproj",
         "packagesPath": "C:\\Users\\kabel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\obj\\",
+        "outputPath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

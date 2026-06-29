@@ -137,13 +137,13 @@ app.MapScalarApiReference("/docs", options =>
         });
 });
 
-var scalarUrl = "http://localhost:5030/docs";
+// var scalarUrl = "http://localhost:5030/docs";
 
-Process.Start(new ProcessStartInfo
-{
-    FileName = scalarUrl,
-    UseShellExecute = true
-});
+// Process.Start(new ProcessStartInfo
+// {
+//     FileName = scalarUrl,
+//     UseShellExecute = true
+// });
 
 app.UseHttpsRedirection();
 app.UseCors(corsPolicy);
