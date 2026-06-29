@@ -1,0 +1,53 @@
+name: .NET Authentication Service CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - staging
+      - production
+
+  pull_request:
+    branches:
+      - main
+      - staging
+      - production
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Build solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Unit Tests
+        run: dotnet test --configuration Release --no-build --verbosity normal
+
+      # STAGING + MAIN: publish artifacts
+      - name: Publish (staging & main only)
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
+        run: dotnet publish --configuration Release --no-build --output ./publish
+
+      - name: Upload artifact
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
+        uses: actions/upload-artifact@v4
+        with:
+          name: authentication-service-${{ github.ref_name }}
+          path: ./publish
+
+      # PRODUCTION: build only
+      - name: Production build confirmation
+        if: github.ref == 'refs/heads/production'
+        run: echo "Production build successful (no deployment yet)"
