@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.LIGHTSALE_SSH_KEY }}
           script: |
-            cd /home/ubuntu/ThirdParty_API
+            cd /home/ubuntu/pma-backend
             git pull origin main
             npm install
             pm2 restart thirdparty_api
