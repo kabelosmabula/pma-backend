@@ -22,4 +22,4 @@ jobs:
             rm -rf Authentication-Service/bin
             git pull origin main
             dotnet publish --configuration Release --no-build --output ./publish
-            pm2 restart thirdparty_api
+            pm2 restart pma-auth-service
