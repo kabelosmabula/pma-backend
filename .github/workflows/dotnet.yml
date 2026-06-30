@@ -19,6 +19,7 @@ jobs:
           key: ${{ secrets.LIGHTSALE_SSH_KEY }}
           script: |
             cd /home/ubuntu/pma-backend
+            rm -rf Authentication-Service/bin
             git pull origin main
-            npm install
+            dotnet publish --configuration Release --no-build --output ./publish
             pm2 restart thirdparty_api
