@@ -1,53 +1,24 @@
-name: .NET Authentication Service CI/CD
+name: Deploy Third Party API
 
 on:
   push:
-    branches:
-      - main
-      - staging
-      - production
-
-  pull_request:
-    branches:
-      - main
-      - staging
-      - production
+    branches: [ main ]
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-      - name: Setup .NET 10
-        uses: actions/setup-dotnet@v4
+      - name: Deploy to Lightsail
+        uses: appleboy/ssh-action@master
         with:
-          dotnet-version: '10.0.x'
-
-      - name: Restore dependencies
-        run: dotnet restore
-
-      - name: Build solution
-        run: dotnet build --configuration Release --no-restore
-
-      - name: Run Unit Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
-
-      # STAGING + MAIN: publish artifacts
-      - name: Publish (staging & main only)
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
-        run: dotnet publish --configuration Release --no-build --output ./publish
-
-      - name: Upload artifact
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/staging'
-        uses: actions/upload-artifact@v4
-        with:
-          name: authentication-service-${{ github.ref_name }}
-          path: ./publish
-
-      # PRODUCTION: build only
-      - name: Production build confirmation
-        if: github.ref == 'refs/heads/production'
-        run: echo "Production build successful (no deployment yet)"
+          host: ${{ secrets.IP_ADDRESS }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.LIGHTSALE_SSH_KEY }}
+          script: |
+            cd /home/ubuntu/ThirdParty_API
+            git pull origin main
+            npm install
+            pm2 restart thirdparty_api
