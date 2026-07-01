@@ -1,25 +1,63 @@
-name: Deploy Third Party API
+name: Deploy Authentication Service
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   deploy:
+    name: Deploy to AWS Lightsail
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
+      - name: Checkout Source
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Restore Dependencies
+        run: dotnet restore Authentication-Service/API.Service.csproj
+
+      - name: Build Application
+        run: dotnet build Authentication-Service/API.Service.csproj --configuration Release --no-restore
 
       - name: Deploy to Lightsail
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.IP_ADDRESS }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.LIGHTSALE_SSH_KEY }}
           script: |
+            set -e
+
+            echo "Navigating to project..."
             cd /home/ubuntu/pma-backend
+
+            echo "Stopping application..."
+            pm2 stop pma-auth-service || true
+
+            echo "Cleaning previous build..."
             rm -rf Authentication-Service/bin
-            git pull origin main
-            dotnet publish --configuration Release --no-build --output ./publish
+            rm -rf Authentication-Service/obj
+            rm -rf publish
+
+            echo "Fetching latest code..."
+            git fetch origin
+            git reset --hard origin/main
+
+            echo "Restoring packages..."
+            dotnet restore Authentication-Service/API.Service.csproj
+
+            echo "Publishing application..."
+            dotnet publish Authentication-Service/API.Service.csproj \
+              --configuration Release \
+              --output ./publish
+
+            echo "Starting application..."
             pm2 restart pma-auth-service
+
+            echo "Deployment completed successfully."
