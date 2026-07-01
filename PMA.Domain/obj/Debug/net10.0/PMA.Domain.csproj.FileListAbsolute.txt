@@ -23,3 +23,4 @@ C:\Users\kabel\Downloads\Pma-System_Github\PMA.Domain\obj\Debug\net10.0\PMA.Doma
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Domain\obj\Debug\net10.0\refint\PMA.Domain.dll
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Domain\obj\Debug\net10.0\PMA.Domain.pdb
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Domain\obj\Debug\net10.0\ref\PMA.Domain.dll
+C:\Users\kabel\Downloads\Pma-System_Github\PMA.Domain\obj\Debug\net10.0\PMA.Domain.sourcelink.json

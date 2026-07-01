@@ -37,3 +37,4 @@ C:\Users\kabel\Downloads\Pma-System_Github\PMA.Application\obj\Debug\net10.0\ref
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Application\obj\Debug\net10.0\PMA.Application.xml
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Application\obj\Debug\net10.0\PMA.Application.pdb
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Application\obj\Debug\net10.0\ref\PMA.Application.dll
+C:\Users\kabel\Downloads\Pma-System_Github\PMA.Application\obj\Debug\net10.0\PMA.Application.sourcelink.json

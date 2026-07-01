@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PMA.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+633a3d85109e8c3f64436ec9a179847a77574bb8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PMA.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PMA.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

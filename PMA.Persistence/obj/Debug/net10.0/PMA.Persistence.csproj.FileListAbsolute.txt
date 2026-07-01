@@ -29,3 +29,4 @@ C:\Users\kabel\Downloads\Pma-System_Github\PMA.Persistence\obj\Debug\net10.0\PMA
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Persistence\obj\Debug\net10.0\refint\PMA.Persistence.dll
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Persistence\obj\Debug\net10.0\PMA.Persistence.pdb
 C:\Users\kabel\Downloads\Pma-System_Github\PMA.Persistence\obj\Debug\net10.0\ref\PMA.Persistence.dll
+C:\Users\kabel\Downloads\Pma-System_Github\PMA.Persistence\obj\Debug\net10.0\PMA.Persistence.sourcelink.json

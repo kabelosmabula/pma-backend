@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "u+r5dBVYC+I=",
+  "dgSpecHash": "OxbZmSoNYiY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\authentication-service\\API.Service.csproj",
+  "projectFilePath": "C:\\Users\\kabel\\Downloads\\Pma-System_Github\\Authentication-Service\\API.Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kabel\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\kabel\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
