@@ -26,6 +26,9 @@ namespace PMA.Application.Features.Users.Command.CreateAccount
 
         public async Task<Result<string>> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
+
+            using var transaction = await _dbContext.Database.BeginTransactionAsync(cancellationToken);
+
  
             try
             {
@@ -71,12 +74,16 @@ namespace PMA.Application.Features.Users.Command.CreateAccount
 
                 if (!results.Success) throw new Exception(results.Message);
 
+                await transaction.CommitAsync();
+
                 return Result<string>.Ok($"Your profile was created successfully , and an email was sent to you to verify your account");
 
             }
             catch (Exception ex)
             {
+                await transaction.RollbackAsync(cancellationToken);
                 return Result<string>.Fail(ex.Message);
+                
             }
         }
     }
