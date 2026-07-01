@@ -8,7 +8,7 @@ namespace API.Service.Features.Invoices.CreateInvoice.Commands.CreateInvoice
 {
     public class CreateInvoiceCommand : InvoiceShared , IRequest<Result<string>>
     {
-        public Guid UserId { get; set; } vdkvlds
+        public Guid UserId { get; set; }
 
     }
 }
