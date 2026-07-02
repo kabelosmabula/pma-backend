@@ -1,12 +1,12 @@
-﻿using API.Service.Dtos;
+﻿using System.Text.Json.Serialization;
+using API.Service.Dtos;
 
 namespace Models
 {
     public class AuthResponse
     {
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string Token { get; set; } = string.Empty;
-
-        public Guid RefreshToken { get; set; }
 
         public AuthUserDto User { get; set; } = new AuthUserDto();
 

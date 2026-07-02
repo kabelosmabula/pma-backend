@@ -3,6 +3,10 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<Nullable>enable</Nullable>
+		<TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+		<WarningLevel>0</WarningLevel>
+		<AnalysisLevel>none</AnalysisLevel>
+		<NoWarn>$(NoWarn);CS*</NoWarn>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<UserSecretsId>02be27f8-55dd-4dd1-90df-018d98006d5f</UserSecretsId>
 		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
@@ -30,6 +34,13 @@
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.0" />
 		<PackageReference Include="NSwag.Core" Version="14.6.3" />
 		<PackageReference Include="Scalar.AspNetCore" Version="2.13.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+	<Content Include="Templates\**\*">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	</Content>
 	</ItemGroup>
 
 	<ItemGroup>

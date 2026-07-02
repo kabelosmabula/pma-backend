@@ -38,6 +38,7 @@ namespace API.Service.Controllers
             try
             {
                 var result = await _mediator.Send(command); if (!result.Success) throw new Exception(result.Error ?? "");
+                Response.Headers.Append("Authorization", $"Bearer {result.Data.Token}"); result.Data.Token = null;
                 return Ok(Result<AuthResponse?>.Ok(result.Data));
 
             }

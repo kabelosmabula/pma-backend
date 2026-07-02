@@ -84,7 +84,7 @@ namespace Authentication.Service.Features.Users.Command.CreateAuthenticationToke
 
                 string tokenString = _jwtTokenService.GenerateToken(session); 
 
-                var autheResponse = new AuthResponse { RefreshToken = user.id , User = userProfile ,Token = tokenString , Practices = listOfPractices ,Roles = listOfRoles };
+                var autheResponse = new AuthResponse {User = userProfile ,Token = tokenString , Practices = listOfPractices ,Roles = listOfRoles };
                 return Result<AuthResponse>.Ok(autheResponse);
 
             }

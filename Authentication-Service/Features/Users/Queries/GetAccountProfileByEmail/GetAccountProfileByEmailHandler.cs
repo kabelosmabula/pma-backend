@@ -11,12 +11,10 @@ namespace API.Service.Features.Users.Queries.GetAccountProfileByEmail
     {
         
         private readonly PMADBContext _dbContext;
-
         public GetAccountProfileByEmailHandler(PMADBContext dbContext)
         {
             _dbContext = dbContext;
         }
-
         public async Task<Result<UserDto>> Handle(GetAccountProfileByEmailQuery request, CancellationToken cancellationToken)
         {
             var users = await _dbContext.Users.Where(x => x.Email == request.Email && x.isdeleted == false).FirstOrDefaultAsync() ?? throw new Exception("User not found");

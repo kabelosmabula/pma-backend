@@ -327,3 +327,5 @@ C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net1
 C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net10.0\API.Service.genruntimeconfig.cache
 C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\obj\Debug\net10.0\ref\API.Service.dll
 C:\Users\kabel\Downloads\Pma-System_Github\authentication-service\obj\Debug\net10.0\API.Service.sourcelink.json
+C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\bin\Debug\net10.0\Templates\InternalPractionerRegistration.html
+C:\Users\kabel\Downloads\Pma-System_Github\Authentication-Service\bin\Debug\net10.0\Templates\VerifyEmail.html
